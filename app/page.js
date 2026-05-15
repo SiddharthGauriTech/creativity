@@ -332,8 +332,14 @@ const PatronusCharm = () => {
         <div className="flex flex-col items-center min-h-[160px]">
           <motion.button
             onClick={() => {
-              if (error.includes("not supported")) setSpellCast(true);
-              else startListening();
+              startListening();
+              // Fallback for mobile: trigger after 1 second regardless of recognition
+              setTimeout(() => {
+                setSpellCast(true);
+                if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
+                  window.navigator.vibrate([200, 100, 400]);
+                }
+              }, 2000);
             }}
             className={`w-24 h-24 rounded-full flex items-center justify-center border transition-all duration-300 ${listening ? 'bg-sky-900/40 border-sky-400 text-sky-300' : 'bg-transparent border-[#d4af37]/50 text-[#d4af37]'}`}
             whileHover={{ scale: 1.05 }}
