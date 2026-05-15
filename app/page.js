@@ -120,13 +120,15 @@ const MirrorOfErised = ({ amortentiaActive }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
           <motion.div
-            className="absolute bottom-10 left-0 right-0 text-center px-6 z-20"
+            className="absolute bottom-[calc(6rem+env(safe-area-inset-bottom))] left-0 right-0 text-center px-8 z-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <h3 className={`text-3xl font-serif mb-3 drop-shadow-[0_0_10px_rgba(0,0,0,1)] ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>My Eternal Desire</h3>
-            <p className="text-gray-200 text-sm italic drop-shadow-md font-serif">On April 22nd, you became the magic that turned my dreams into reality.</p>
+            <div className="bg-black/20 backdrop-blur-[2px] py-4 rounded-2xl border border-white/5 shadow-2xl">
+              <h3 className={`text-3xl font-serif mb-2 drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] transition-colors duration-1000 ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>My Eternal Desire</h3>
+              <p className="text-white text-sm italic drop-shadow-lg font-serif px-4">On April 22nd, you became the magic that turned my dreams into reality, my love.</p>
+            </div>
           </motion.div>
         </>
       )}
@@ -293,7 +295,7 @@ const PatronusCharm = () => {
             >
               <h2 className="text-4xl sm:text-6xl font-serif text-white mb-6 drop-shadow-[0_0_30px_#fff]">You are My Eternal Patronus.</h2>
               <p className="text-sky-100 text-lg sm:text-xl font-serif italic max-w-lg mx-auto leading-relaxed drop-shadow-md">
-                "With you by my side, no shadow can ever touch my soul. Thank you for being the light that guides me home."
+                "With you by my side, no shadow can ever touch my soul. Thank you for being the light that guides me home, my love."
               </p>
               <div className="mt-12 w-32 h-32 mx-auto rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/50 shadow-[0_0_50px_rgba(255,255,255,0.8)]">
                 <motion.img
@@ -407,7 +409,7 @@ const DailyProphet = ({ amortentiaActive }) => {
             "It is whispered through the Department of Mysteries that her smile is crafted from pure Felix Felicis," reported an Unspeakable. "And her laugh is the only Patronus he will ever need to chase the darkness away."
           </p>
           <p>
-            On April 22nd, she stole his heart forever. Today, the entire wizarding world pauses to wish this extraordinary girl the happiest of birthdays. He solemnly swears that he is entirely, unconditionally, and eternally hers.
+            On April 22nd, she stole his heart forever. Today, the entire wizarding world pauses to wish his soulmate the happiest of birthdays. He solemnly swears that he is entirely, unconditionally, and eternally hers.
           </p>
         </div>
       </motion.div>
@@ -752,7 +754,7 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
             </div>
 
             <motion.div className="text-center z-10 pointer-events-none px-6" animate={{ opacity: taps.length >= 5 ? 0 : 1 }}>
-              <h1 className="text-2xl sm:text-3xl font-serif text-[#d4af37] tracking-[0.2em] uppercase mb-4 opacity-80">I solemnly swear that my love for you...</h1>
+              <h1 className="text-2xl sm:text-3xl font-serif text-[#d4af37] tracking-[0.2em] uppercase mb-4 opacity-80">I solemnly swear that my love for you... is written in the stars, now and forever.</h1>
               <p className="text-gray-400 text-sm tracking-widest font-light animate-pulse">Tap to illuminate my soul</p>
               <div className="mt-12 flex justify-center gap-3">
                 {[...Array(5)].map((_, i) => (
@@ -868,7 +870,7 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
                   className={`w-[85vw] sm:w-[400px] h-[55vh] sm:h-[65vh] snap-center shrink-0 relative rounded-[2rem] overflow-hidden border shadow-[0_10px_30px_rgba(0,0,0,0.8)] transition-colors duration-1000 ${amortentiaActive ? 'border-pink-500/30' : 'border-[#d4af37]/30'}`}
                   initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/60 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-[#030712]/80 to-transparent z-10" />
                   {i === 1 && (
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-tr from-yellow-400/20 to-transparent pointer-events-none z-[11] mix-blend-overlay"
@@ -909,11 +911,11 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
 
                   <div className="absolute bottom-0 left-0 right-0 p-8 z-20" style={{ transform: "translateZ(40px)" }}>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-6 h-[1px] ${amortentiaActive ? 'bg-pink-400' : 'bg-[#d4af37]'}`} />
-                      <p className={`text-[10px] tracking-widest uppercase ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>Memory 0{i + 1}</p>
+                      {/* <div className={`w-6 h-[1px] ${amortentiaActive ? 'bg-pink-400' : 'bg-[#d4af37]'}`} /> */}
+                      {/* <p className={`text-[10px] tracking-widest uppercase ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>Memory 0{i + 1}</p> */}
                     </div>
-                    <h3 className="text-3xl sm:text-4xl font-serif text-white mb-4">{mem.title}</h3>
-                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed opacity-90">{mem.desc}</p>
+                    <h3 className={`text-3xl sm:text-4xl font-serif mb-4 transition-colors duration-1000 drop-shadow-md ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>{mem.title}</h3>
+                    <p className="text-white text-sm sm:text-base leading-relaxed font-medium drop-shadow-lg">{mem.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -958,14 +960,7 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
             </div>
 
             <motion.div
-              className={`w-full max-w-[320px] h-[220px] bg-[#631212] rounded-lg relative flex items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#4a0d0d] z-10 ${sealBroken ? 'cursor-grab active:cursor-grabbing' : ''}`}
-              drag={sealBroken ? "y" : false} dragConstraints={{ top: -200, bottom: 0 }} dragElastic={0.2}
-              onDragEnd={(e, info) => {
-                if (info.offset.y < -80) {
-                  setLetterOpened(true);
-                  if (typeof window !== "undefined" && window.navigator && window.navigator.vibrate) window.navigator.vibrate([100, 50, 100]);
-                }
-              }}
+              className={`w-full max-w-[320px] h-[220px] bg-[#631212] rounded-lg relative flex items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[#4a0d0d] z-10`}
               whileHover={sealBroken ? { scale: 1.02 } : {}} whileTap={sealBroken ? { scale: 0.98 } : {}}
               style={{ rotateX: tilt.y, rotateY: tilt.x, transformStyle: "preserve-3d" }}
             >
@@ -987,7 +982,8 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
                     transition={{ duration: 2, repeat: Infinity }}
                     onClick={() => {
                       setSealBroken(true);
-                      if (typeof window !== "undefined" && window.navigator && window.navigator.vibrate) window.navigator.vibrate([50, 100, 50, 200]);
+                      setLetterOpened(true);
+                      if (typeof window !== "undefined" && window.navigator && window.navigator.vibrate) window.navigator.vibrate([100, 50, 100, 200]);
                     }}
                     exit={{ scale: 1.5, opacity: 0, filter: "blur(10px)" }}
                     whileHover={{ scale: 1.1 }}
@@ -1011,18 +1007,20 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
                 </motion.div>
               )}
 
-              <motion.div
-                className="absolute -top-14 sm:-top-16 flex flex-col items-center pointer-events-none"
-                animate={{ y: [0, -8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                style={{ transform: "translateZ(20px)" }}
-              >
-                <div className={`border px-5 py-2.5 rounded-full backdrop-blur-md transition-colors duration-1000 ${amortentiaActive ? 'bg-pink-900/40 border-pink-500/40 shadow-[0_0_15px_rgba(236,72,153,0.3)]' : 'bg-[#111] border-[#d4af37]/40 shadow-[0_0_15px_rgba(212,175,55,0.2)]'}`}>
-                  <p className={`text-[10px] sm:text-xs tracking-[3px] uppercase font-bold transition-colors duration-1000 ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>
-                    {sealBroken ? 'Swipe Up to Open My Heart' : 'Tap to Reveal Our Secrets'}
-                  </p>
-                </div>
-                <div className={`w-[1px] h-8 bg-gradient-to-t to-transparent mt-2 opacity-50 transition-colors duration-1000 ${amortentiaActive ? 'from-pink-400' : 'from-[#d4af37]'}`} />
-              </motion.div>
+              {!sealBroken && (
+                <motion.div
+                  className="absolute -top-14 sm:-top-16 flex flex-col items-center pointer-events-none"
+                  animate={{ y: [0, -8, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  style={{ transform: "translateZ(20px)" }}
+                >
+                  <div className={`border px-5 py-2.5 rounded-full backdrop-blur-md transition-colors duration-1000 ${amortentiaActive ? 'bg-pink-900/40 border-pink-500/40 shadow-[0_0_15px_rgba(236,72,153,0.3)]' : 'bg-[#111] border-[#d4af37]/40 shadow-[0_0_15px_rgba(212,175,55,0.2)]'}`}>
+                    <p className={`text-[10px] sm:text-xs tracking-[3px] uppercase font-bold transition-colors duration-1000 ${amortentiaActive ? 'text-pink-300' : 'text-[#d4af37]'}`}>
+                      Tap to Reveal Our Secrets
+                    </p>
+                  </div>
+                  <div className={`w-[1px] h-8 bg-gradient-to-t to-transparent mt-2 opacity-50 transition-colors duration-1000 ${amortentiaActive ? 'from-pink-400' : 'from-[#d4af37]'}`} />
+                </motion.div>
+              )}
             </motion.div>
           </section>
 
@@ -1047,26 +1045,26 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
             </motion.button>
 
             {/* Secret Easter Egg Password */}
-            <motion.div className="absolute bottom-14 flex flex-col items-center gap-2 w-full">
+            <motion.div className="absolute bottom-[calc(3.5rem+env(safe-area-inset-bottom))] flex flex-col items-center gap-2 w-full">
               <motion.p
                 className="text-[10px] text-gray-700 uppercase tracking-[4px] cursor-pointer font-serif px-8 py-4 -my-4"
                 onClick={() => {
                   setSecretVowRevealed(true);
                   if (typeof window !== "undefined" && window.navigator && window.navigator.vibrate) window.navigator.vibrate([50, 50, 50]);
                 }}
-                animate={{ 
+                animate={{
                   color: ["#374151", "#9ca3af", "#374151"],
                   opacity: [0.3, 0.6, 0.3]
                 }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 whileHover={{ scale: 1.05, opacity: 1, color: "#d4af37" }}
               >
-                I solemnly swear that my heart is yours, always.
+                I solemnly swear that my heart is yours, always, my love.
               </motion.p>
-              <motion.p 
-                className="text-[8px] text-[#d4af37]/40 tracking-[2px] uppercase font-serif"
-                animate={{ opacity: [0, 0.4, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+              <motion.p
+                className="text-[10px] text-[#d4af37]/70 tracking-[2px] uppercase font-serif drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]"
+                animate={{ opacity: [0.3, 0.9, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
                 ( Tap to Reveal Our Final Secret )
               </motion.p>
@@ -1146,7 +1144,7 @@ Happy Birthday, my love. I solemnly swear that I am yours, always.
               <h2 className="text-3xl sm:text-4xl font-serif text-yellow-400 mb-6 tracking-wider drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]">150 Points!</h2>
               <div className="w-16 h-[1px] bg-yellow-500/30 mx-auto mb-6" />
               <p className="text-gray-300 leading-relaxed mb-10 font-serif italic text-lg">
-                "You've captured the snitch, but I was the lucky one who captured your heart on April 22nd. You are my greatest prize, now and forever."
+                "You've captured the snitch, but I was the lucky one who captured your heart on April 22nd. You are my greatest prize, now and forever, my love."
               </p>
               <motion.button
                 onClick={() => setSnitchCaught(false)}
